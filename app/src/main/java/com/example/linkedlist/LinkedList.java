@@ -58,6 +58,18 @@ public class LinkedList {
 
     public void deleteLastNode() {
 
+        if(head == null) {
+            return;
+        }
+
+        Node second_last = head;
+        // Traverse the list until we find the second last node.
+
+        while (second_last.next.next!=null) {
+            second_last = second_last.next;
+        }
+        // Once we find the 2nd last node, make  next of the 2nd last node to null.
+        second_last.next = null;
     }
 
     public void display() {
