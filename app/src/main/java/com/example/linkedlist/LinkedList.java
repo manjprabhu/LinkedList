@@ -20,9 +20,10 @@ public class LinkedList {
         head = node;
     }
 
+    // Insert an element after the given element.
+    // Here we are given pointer to the node , we have to insert a node after that node.
     public void insertAfter(Node prev_node, int data) {
         Node node = createNode(data);
-
         node.next = prev_node.next;
         prev_node.next = node;
     }
@@ -43,6 +44,20 @@ public class LinkedList {
         }
 //      mark next of current last node to point to newlay added node.
         tail.next = newNode;
+    }
+
+    //Delete the first node.
+    public void deleteFirstNode() {
+        if(head == null) {
+            return;
+        }
+
+        Node temp = head;
+        head = head.next;
+    }
+
+    public void deleteLastNode() {
+
     }
 
     public void display() {

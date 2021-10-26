@@ -30,5 +30,9 @@ public class MainActivity extends AppCompatActivity {
         linkedList.insertAtEnd(1023);
 
         linkedList.display();
+
+        linkedList.deleteFirstNode();
+
+        linkedList.display();
     }
 }
