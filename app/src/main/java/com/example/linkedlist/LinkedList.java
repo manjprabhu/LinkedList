@@ -14,7 +14,7 @@ public class LinkedList {
         return node;
     }
 
-    public void InsertFrontFront(Node node) {
+    public void InsertFront(Node node) {
 //        Node node = createNode(data);
         node.next = head;
         head = node;
@@ -84,6 +84,67 @@ public class LinkedList {
         }
         System.out.println();
     }
+
+    void secondLargestElement() {
+
+        Node current = head;
+        int max = Integer.MIN_VALUE;
+        int smax = Integer.MIN_VALUE;
+
+        while(current.next!=null) {
+            if(current.data> max) {
+                int temp = max;
+                max = current.data;
+                smax = temp;
+            } else if(current.data < max && current.data > smax) {
+                smax = current.data;
+            }
+            current = current.next;
+        }
+        Log.v("LinkedList","=== Largest:"+ max + " second max:"+ smax);
+    }
+
+    void secondLastNode() {
+        Node current = head;
+
+        while(current.next.next!=null) {
+            current = current.next;
+        }
+
+        Log.v("LinkedList"," Second Last Node:"+ current.data);
+    }
+
+    void checkIfListisCircular() {
+        Node current = head;
+
+        while(current.next!=null && current.next!=head) {
+            current = current.next;
+        }
+
+        if(current== head) {
+            Log.v("LinkedList"," Linked list is circular");
+        } else {
+            Log.v("LinkedList"," Linked list is not circular");
+        }
+    }
+
+    // Here since we dont have head pointer, idea is to swap the delete node with next node, this is solution will work only
+    // delete node is not last node.
+
+    void deleteANodeWithoutHeadNode(Node del) {
+
+        //Find next node using next pointer
+        Node temp =  del.next;
+
+        // Copy data of next node to this node
+        del.data = temp.data;
+
+        //Unlink the next node.
+        del.next = temp.next;
+
+    }
+
+
 
     class Node {
         int data;
