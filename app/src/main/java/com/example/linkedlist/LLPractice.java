@@ -76,6 +76,23 @@ public class LLPractice {
 
     }
 
+    void detectLoopFloydsAlgorithm() {
+
+        Node first = head;
+        Node second = head;
+
+        while(first!=null && second!=null) {
+            first = first.next;
+            second = second.next.next;
+
+            if(first == second) {
+                Log.v(TAG,"===>>> Circular List");
+                return;
+            }
+        }
+
+    }
+
 
 
 
