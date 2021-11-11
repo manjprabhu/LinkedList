@@ -78,17 +78,35 @@ public class MainActivity extends AppCompatActivity {
         LLPractice.Node node2 = llPractice.new Node(122);
         LLPractice.Node node3 = llPractice.new Node(133);
         LLPractice.Node endNode = llPractice.new Node(90);
+        LLPractice.Node endNode1 = llPractice.new Node(160);
+        LLPractice.Node endNode2 = llPractice.new Node(160);
+        LLPractice.Node endNode3 = llPractice.new Node(160);
 
-        llPractice.insertAtFront(node);
-        llPractice.insertAtFront(node1);
-        llPractice.insertAtFront(node2);
-        llPractice.insertAtFront(node3);
+
+       llPractice.insertAtTheFront(node);
+       llPractice.insertAtTheFront(node1);
+        llPractice.insertAtTheFront(node2);
+        llPractice.insertAtTheFront(node3);
+        llPractice.insertAtTheFront(endNode);
+        llPractice.insertAtTheFront(endNode1);
+        llPractice.insertAtTheFront(endNode2);
+        llPractice.insertAtTheFront(endNode3);
+
+
+        llPractice.nNodefromlast(12);
+
+
+//        llPractice.inseratend(node3);
 
         // Just to make list circular.
 //        llPractice.head.next.next.next.next = llPractice.head;
 
+//        llPractice.display();
+
+//        llPractice.deleteGivenPosition(1);
+//        Log.v("LLPractice","***********************************");
+//        llPractice.reverseLinkedList();
         llPractice.display();
-        Log.v("LLPractice","***********************************");
 
     }
 }
