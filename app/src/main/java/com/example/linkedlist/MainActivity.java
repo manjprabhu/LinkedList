@@ -72,41 +72,33 @@ public class MainActivity extends AppCompatActivity {
 //        llPractice.checkForCircularList();
 //        llPractice.display();
 
-        LLPractice llPractice = new LLPractice();
-        LLPractice.Node node = llPractice.new Node(100);
-        LLPractice.Node node1 = llPractice.new Node(111);
-        LLPractice.Node node2 = llPractice.new Node(122);
-        LLPractice.Node node3 = llPractice.new Node(133);
-        LLPractice.Node endNode = llPractice.new Node(90);
-        LLPractice.Node endNode1 = llPractice.new Node(160);
-        LLPractice.Node endNode2 = llPractice.new Node(160);
-        LLPractice.Node endNode3 = llPractice.new Node(160);
+        PracticeLL llPractice = new PracticeLL();
+
+        PracticeLL.Node node = llPractice.new Node(100);
+        PracticeLL.Node node1 = llPractice.new Node(111);
+        PracticeLL.Node node2 = llPractice.new Node(122);
+        PracticeLL.Node node3 = llPractice.new Node(133);
+        PracticeLL.Node endNode = llPractice.new Node(90);
+        PracticeLL.Node endNode1 = llPractice.new Node(160);
+        PracticeLL.Node endNode2 = llPractice.new Node(6534);
+        PracticeLL.Node endNode3 = llPractice.new Node(160);
 
 
-       llPractice.insertAtTheFront(node);
-       llPractice.insertAtTheFront(node1);
-        llPractice.insertAtTheFront(node2);
-        llPractice.insertAtTheFront(node3);
-        llPractice.insertAtTheFront(endNode);
-        llPractice.insertAtTheFront(endNode1);
-        llPractice.insertAtTheFront(endNode2);
-        llPractice.insertAtTheFront(endNode3);
+        llPractice.addElementAtFrontOfTheList(node);
+        llPractice.addElementAtFrontOfTheList(node1);
+        llPractice.addElementAtFrontOfTheList(node2);
+        llPractice.addElementAtFrontOfTheList(node3);
+        llPractice.addElementAtFrontOfTheList(endNode);
 
 
-        llPractice.nNodefromlast(12);
-
-
-//        llPractice.inseratend(node3);
 
         // Just to make list circular.
-//        llPractice.head.next.next.next.next = llPractice.head;
+        llPractice.head.next.next.next.next = llPractice.head;
+        llPractice.checkForCircularList();
+
+        Log.v("PracticeLL","***********************************");
 
 //        llPractice.display();
-
-//        llPractice.deleteGivenPosition(1);
-//        Log.v("LLPractice","***********************************");
-//        llPractice.reverseLinkedList();
-        llPractice.display();
 
     }
 }
