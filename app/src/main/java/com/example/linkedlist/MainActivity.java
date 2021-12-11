@@ -87,10 +87,13 @@ public class MainActivity extends AppCompatActivity {
         llPractice.insertAtFront(node1);
         llPractice.insertAtFront(node2);
         llPractice.insertAtFront(node3);
+        llPractice.insertAtFront(endNode);
+        llPractice.insertAtFront(endNode1);
+        llPractice.insertAtFront(endNode2);
         llPractice.display();
         Log.v("PracticeLL","***********************************");
 
-        llPractice.deleteLastNode();
+        llPractice.deleteGivenNode(endNode);
         llPractice.display();
 
 

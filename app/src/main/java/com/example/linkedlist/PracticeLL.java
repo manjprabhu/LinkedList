@@ -85,6 +85,22 @@ public class PracticeLL {
         temp.next = null;
     }
 
+    void deleteGivenNode(Node node) {
+        if(head == null) {
+            Log.d(TAG, "Empty List: ");
+            return;
+        }
+
+        Node temp = head;
+
+        while(temp.next.data!=node.data) {
+            temp = temp.next;
+        }
+
+        temp.next = node.next;
+
+    }
+
     void display() {
         Node temp = head;
 
