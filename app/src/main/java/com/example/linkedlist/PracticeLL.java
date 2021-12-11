@@ -5,7 +5,95 @@ import android.util.Log;
 public class PracticeLL {
 
     private final String TAG = PracticeLL.class.getSimpleName();
-    Node head = null;
+
+    private Node head = null;
+    private Node tail = null;
+    class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    void insertAtFront(Node node) {
+        node.next = head;
+        head = node;
+    }
+
+    void insertAtEndofList(Node node) {
+        if(head == null) {
+            Log.v(TAG,"Empty list:");
+        }
+
+        Node temp = head;
+        while (temp.next!=null) {
+            temp = temp.next;
+        }
+
+        temp.next = node;
+        node.next = null;
+    }
+
+    void insertAfterGivenNode(Node node, Node afterNode) {
+        Node temp = head;
+
+        if(head == null) {
+            Log.d(TAG, "Empty list: ");
+            return;
+        }
+
+        while (temp.data !=afterNode.data) {
+            temp = temp.next;
+        }
+
+        node.next = afterNode.next;
+        afterNode.next = node;
+
+    }
+
+    void display() {
+        Node temp = head;
+
+        if(head == null) {
+            Log.v(TAG,"List is empty");
+            return;
+        }
+
+        while (temp!=null) {
+            Log.v(TAG,"Item: "+ temp.data);
+            temp = temp.next;
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*Node head = null;
     Node tail = null;
 
     void addElementAtFrontOfTheList(Node node) {
@@ -143,6 +231,6 @@ public class PracticeLL {
             this.data = data;
             this.next = null;
         }
-    }
+    }*/
 
 }
