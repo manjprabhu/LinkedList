@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         llPractice.display();
         Log.v("PracticeLL","***********************************");
 
-        llPractice.insertLast(endNode2);
+        llPractice.deleteLastNode();
         llPractice.display();
 
 

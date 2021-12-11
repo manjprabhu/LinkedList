@@ -8,15 +8,6 @@ public class PracticeLL {
 
     private Node head = null;
     private Node tail = null;
-    class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
 
     void insertAtFront(Node node) {
         node.next = head;
@@ -24,12 +15,12 @@ public class PracticeLL {
     }
 
     void insertAtEndofList(Node node) {
-        if(head == null) {
-            Log.v(TAG,"Empty list:");
+        if (head == null) {
+            Log.v(TAG, "Empty list:");
         }
 
         Node temp = head;
-        while (temp.next!=null) {
+        while (temp.next != null) {
             temp = temp.next;
         }
 
@@ -40,12 +31,12 @@ public class PracticeLL {
     void insertAfterGivenNode(Node node, Node afterNode) {
         Node temp = head;
 
-        if(head == null) {
+        if (head == null) {
             Log.d(TAG, "Empty list: ");
             return;
         }
 
-        while (temp.data !=afterNode.data) {
+        while (temp.data != afterNode.data) {
             temp = temp.next;
         }
 
@@ -57,30 +48,64 @@ public class PracticeLL {
     void insertLast(Node node) {
         Node temp = head;
 
-        if(head == null) {
+        if (head == null) {
             Log.d(TAG, "Empty list:");
             return;
         }
 
-        while (temp.next!=null) {
+        while (temp.next != null) {
             temp = temp.next;
         }
         temp.next = node;
         node.next = null;
     }
 
-    void display() {
+    void deleteFront() {
         Node temp = head;
-
-        if(head == null) {
-            Log.v(TAG,"List is empty");
+        if (head == null) {
+            Log.d(TAG, "Empty list: ");
             return;
         }
 
-        while (temp!=null) {
-            Log.v(TAG,"Item: "+ temp.data);
-            temp = temp.next;
+        temp = head.next;
+        head = temp;
+    }
 
+    void deleteLastNode() {
+        Node temp = head;
+
+        if(head == null) {
+            Log.d(TAG, "Empty List: ");
+            return;
+        }
+        while (temp.next.next!=null) {
+            temp = temp.next;
+        }
+
+        temp.next = null;
+    }
+
+    void display() {
+        Node temp = head;
+
+        if (head == null) {
+            Log.v(TAG, "List is empty");
+            return;
+        }
+
+        while (temp != null) {
+            Log.v(TAG, "Item: " + temp.data);
+            temp = temp.next;
+        }
+    }
+
+    class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
         }
     }
 
