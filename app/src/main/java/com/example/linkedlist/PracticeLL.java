@@ -54,6 +54,21 @@ public class PracticeLL {
 
     }
 
+    void insertLast(Node node) {
+        Node temp = head;
+
+        if(head == null) {
+            Log.d(TAG, "Empty list:");
+            return;
+        }
+
+        while (temp.next!=null) {
+            temp = temp.next;
+        }
+        temp.next = node;
+        node.next = null;
+    }
+
     void display() {
         Node temp = head;
 
