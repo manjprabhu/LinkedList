@@ -88,19 +88,23 @@ public class MainActivity extends AppCompatActivity {
         llPractice.insertAtFront(node2);
         llPractice.insertAtFront(node3);
         llPractice.insertAtFront(endNode);
-        llPractice.insertAtFront(endNode1);
-        llPractice.insertAtFront(endNode2);
-        llPractice.display();
-        Log.v("PracticeLL","***********************************");
 
-        llPractice.deleteGivenNode(endNode);
+
+
         llPractice.display();
+
+
+        Log.v("PracticeLL","***********************************");
+        llPractice.insertEnd(endNode1);
+        llPractice.display();
+
+
 
 
         // Just to make list circular.
-       /* llPractice.head.next.next.next.next = llPractice.head;
-        llPractice.checkForCircularList();*/
-
+//        llPractice.head.next.next.next.next.next.next.next = llPractice.head;
+//        llPractice.checkForCircularList();
+//        llPractice.checkForLoop();
 
 
 //        llPractice.display();
