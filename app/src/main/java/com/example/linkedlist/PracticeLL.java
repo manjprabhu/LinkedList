@@ -49,5 +49,10 @@ public class PracticeLL {
         }
     }
 
+    void deleteWithoutHeadNode(Node deleteNode) {
+        Node temp = deleteNode.next;
+        deleteNode.data = temp.data;
+        deleteNode.next = temp.next;
+    }
 
 }
